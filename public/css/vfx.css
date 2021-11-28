@@ -1,0 +1,159 @@
+#down-triangle { 
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-bottom: 40px solid transparent;
+  border-top: 40px solid #BCF8FC;
+  display: inline-block;
+
+  filter: blur(0.4rem);
+
+  position: absolute;
+  z-index: 25;
+  bottom: 69%;
+  right: 31%;
+  pointer-events: none;
+
+  animation: glow 1s ease infinite alternate;
+  transform: perspective(400px) rotateY(45deg);
+}
+
+@keyframes glow {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.right-hand-thruster {
+  bottom: 55%;
+  left: 8%;
+  z-index: 15;
+}
+.left-hand-thruster {
+  bottom: 49%;
+  right: 5%;
+  z-index: 15;
+}
+.right-foot-thruster {
+  bottom: 20%;
+  left: 29%;
+  z-index: 5;
+}
+.left-foot-thruster {
+  bottom: 5%;
+  right: 52%;
+  z-index: 5;
+}
+
+/* MOBILE */
+@media (max-width: 35em) {
+  #down-triangle {
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-top: 20px solid #BCF8FC;
+    bottom: 69%;
+    right: 30%;
+  }
+
+  .right-hand-thruster {
+    bottom: 52%;
+    left: 4%;
+  }
+  .left-hand-thruster {
+    bottom: 46%;
+    right: 1%;
+  }
+  .right-foot-thruster {
+    bottom: 17%;
+    left: 25%;
+    z-index: 5;
+  }
+  .left-foot-thruster {
+    bottom: 1%;
+    right: 44%;
+    z-index: 5;
+  }
+}
+
+/* Originally from https://codepen.io/Jamie_Block/pen/bGHnD */
+.container-thruster-hand {
+	width: 60px;
+	height: 60px;
+  min-width: 20px;
+  min-height: 20px;
+  position: absolute;
+  opacity: 0.85;
+	transform-origin: center top;
+	animation-name: flicker;
+	animation-duration: 3ms;
+	animation-delay: 200ms;
+	animation-timing-function: ease-in;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+.thruster {
+	bottom: 0;
+	position: absolute;
+	border-bottom-right-radius: 50%;
+	border-bottom-left-radius: 50%;
+	border-top-left-radius: 50%;
+	transform: rotate(135deg) scale(1.5, 1.5);
+}
+.yellow {
+	left: 15px;
+	width: var(--yellow-thruster-width-hand);
+	height: var(--yellow-thruster-width-hand);
+	background: gold;
+	box-shadow: 0px 0px 9px 4px gold;
+}
+.orange {
+	left: 10px;
+	width: var(--orange-thruster-width-hand);
+	height: var(--orange-thruster-width-hand);
+	background: orange;
+	box-shadow: 0px 0px 9px 4px orange;
+}
+.red {
+	left: 5px;
+	top: 20px;
+	width: var(--red-thruster-width-hand);
+	height: var(--red-thruster-width-hand);
+	background: OrangeRed;
+	border: 1px solid OrangeRed;
+	box-shadow: 0px 0px 5px 4px OrangeRed;
+}
+.white {
+	left: 15px;
+	top: 20px;
+	width: var(--white-thruster-width-hand);
+	height: var(--white-thruster-width-hand);
+	background: white;
+	box-shadow: 0px 0px 9px 4px white;
+}
+.circle {
+	border-radius: 50%;
+	position: absolute;
+}
+@keyframes flicker {
+  0% {
+    transform: rotate(-1deg);
+  }
+  20% {
+    transform: rotate(1deg);
+  }
+  40% {
+    transform: rotate(-1deg);
+  }
+  60% {
+    transform: rotate(1deg) scaleY(1.04);
+  }
+  80% {
+    transform: rotate(-2deg) scaleY(0.92);
+  }
+  100% {
+    transform: rotate(1deg);
+  }
+}

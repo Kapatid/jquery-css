@@ -1,0 +1,134 @@
+#container-about {
+  margin-top: 100px;
+  position: absolute;
+  display: none;
+  opacity: 0;
+  place-items: center;
+  width: 500px;
+  border: 10px solid var(--primary);
+  background-color: var(--primary);
+  color: white;
+  font-size: 1.3rem;
+  user-select: none;
+}
+#container-about p {
+  font-family: JuPlusMedium;
+  width: 100%;
+  text-align: center;
+}
+#container-about a {
+  font-family: JuPlusMedium;
+  color: white;
+  margin: 20px 0px 20px 0px;
+  transition: transform 0.2s ease-in-out;
+}
+#container-about a:hover {
+  transform: scale(1.15);
+}
+#container-about a span {
+  font-family: Marvel;
+  font-size: 2rem;
+  border: 3px solid white;
+  padding: 4px 5px 0px 5px;
+  margin: 0px 2px 0px 0px;
+}
+
+.folder {
+  width: 100%;
+  margin-top: 40px;
+}
+.folder-title {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  font-family: LemonMilkRegular;
+}
+.folder-tabs {
+  width: 95%;
+  display: flex;
+}
+.folder-tab {
+  font-family: LemonMilkRegular;
+  width: fit-content;
+  border: 4px solid white;
+  padding: 8px;
+  font-size: 0.7rem;
+  margin-right: -4px;
+  margin-bottom: -4px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: grid;
+  text-align: center;
+  place-items: center;
+}
+.folder-tab:hover {
+  background-color: white;
+  color: var(--primary);
+}
+.folder-content {
+  font-family: JuPlusMedium;
+  font-size: 0.85rem;
+  box-sizing: border-box;  
+  width: 100%;
+  border: 4px solid white;
+  padding: 8px;
+  height: 80px;
+  background-color: w;
+}
+
+#about-close {
+  font-family: LemonMilkRegular;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  background-color: transparent;
+  color: white;
+  font-size: 1.3rem;
+  cursor: pointer;
+  margin-top: 30px;
+  padding: 8px;
+  border: 4px solid white;
+  z-index: 55;
+  font-weight: bold;
+  overflow: hidden;
+}
+#about-close:hover {
+  color: var(--primary);
+}
+#about-close::before {
+  transition: all 0.2s ease-out;
+  content: "";
+  top: -100%;
+  left: 0;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+#about-close:hover::before {
+  top: 0;
+}
+
+/* MOBILE */
+@media (max-width: 35em) {
+  #container-about {
+    margin-top: 0px;
+    width: 90%;
+    font-size: 0.9rem;
+  }
+  #container-about a span {
+    font-size: 1rem;
+  }
+  .folder-tab {
+    font-size: 0.7rem;
+  }
+  .folder-content {
+    font-size: 0.8rem;
+    height: 100px;
+  }
+  #about-close {
+    font-size: 0.9rem;
+  }
+}
