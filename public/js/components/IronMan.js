@@ -116,7 +116,7 @@ const IronMan = (thrusters) => `
 <div id="container-im">
   <img 
     id="iron-man" 
-    src="./img/iron-man.png" 
+    src="./public/img/iron-man.png" 
     alt="iron-man" 
     usemap="#iron_man_map"
   >
