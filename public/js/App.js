@@ -10,7 +10,6 @@ const App = (AppDOM) => {
   AppDOM.render([IronMan, About], 'root')
 
   // For responsive image maps
-  // Github: https://github.com/stowball/jQuery-rwdImageMaps
   $('img[usemap]').rwdImageMaps()
 }
 

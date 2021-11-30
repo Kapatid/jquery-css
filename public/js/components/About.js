@@ -1,5 +1,6 @@
 import { changeTextAndBG } from "./IronMan.js"
 
+/** @type {{ tabs: string[], content: string[] }} */
 const folder = {
   tabs: [
     'Flight', 
@@ -18,7 +19,7 @@ const folder = {
 const controller = () => {
   $('.folder-tabs').append(() => {
     let allString = ''
-
+    
     folder.tabs.forEach(item => 
       allString += `<div class="folder-tab">${item}</div>`
     )
@@ -47,23 +48,21 @@ const controller = () => {
   })
 
   $("#about-close").on('click', () => {
-    $('#container-about').animate({opacity: 0}, 300, "linear",
-      () => { // Once opacity of About is 0 animate more
-        $('#container-about').css({display: "none"})
+    $('#container-about').animate({ opacity: 0 }, 300, "linear",
+      () => {
+        $('#container-about').css({ display: "none" })
 
-        $('#container-im-text').animate({marginBottom: "0px"})
-
-        $('#iron-man-text').animate({fontSize: "17vw"})
+        $('#iron-man-text').animate({ 
+          fontSize: "17vw", 
+          marginBottom: "200px"
+        }, 400, 'swing')
+        
         changeTextAndBG(true)
         
         // Animation for Iron Man
-        $("#container-im").css({top: "2000px", display: "grid"})
-        $("#container-im").animate({
-          top: "-50px"
-        }, 800, "swing", () => {
-          $("#container-im").animate({
-            top: "0px"
-          }, 1000, "swing")
+        $("#container-im").css({ top: "2000px", display: "grid" })
+        $("#container-im").animate({ top: "-50px" }, 800, "swing", () => {
+          $("#container-im").animate({ top: "0px" }, 1000, "swing")
         })
       }
     )

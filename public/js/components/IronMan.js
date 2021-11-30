@@ -18,12 +18,12 @@ export const changeTextAndBG = (orig) => {
       0 10px 10px rgba(0,0,0,.2),
       0 20px 20px rgba(0,0,0,.15)`
     }) // text-shadow: https://css-tricks.com/almanac/properties/t/text-shadow
-    $('#iron-man-text').css({color: 'white'})
-    $('body').css({backgroundColor: '#B41B29'})
+    $('#iron-man-text').css({ color: 'white' })
+    $('body').css({ backgroundColor: '#B41B29' })
   } else {
-    $('#iron-man-text').css({textShadow: ''})
-    $('#iron-man-text').css({color: '#B41B29'})
-    $('body').css({backgroundColor: 'white'})
+    $('#iron-man-text').css({ textShadow: '' })
+    $('#iron-man-text').css({ color: '#B41B29' })
+    $('body').css({ backgroundColor: 'white' })
   }
 }
 
@@ -46,9 +46,7 @@ const controller = () => {
         })
       })
   
-      $("#mouse-info").animate({
-        opacity: "1"
-      }, 400)
+      $("#mouse-info").animate({ opacity: "1" }, 400)
     })
   
     $('#iron-man-map').on('mouseleave', () => {
@@ -68,36 +66,27 @@ const controller = () => {
   $('#iron-man-map').on('click', () => {
     changeTextAndBG(false)
 
-    $("#container-im").animate({
-      top: "-50px",
-    }, 600, "linear").animate({
-      top: "-1000px",
-      display: "none"
-    }, 200, "linear", () => {
+    $("#container-im")
+    .animate({ top: "-50px" }, 600, "linear")
+    .animate({ top: "-1000px", display: "none" }, 200, "linear", () => {
       if (desktop.matches) {
-        $('#mouse-info').animate({opacity: '0', display: 'none'})
+        $('#mouse-info').animate({ opacity: '0', display: 'none' })
 
-        // Animate Iron Man
-        $('#container-im-text').animate({marginBottom: "500px"})
-        
         // Animate Iron Man text
-        $('#iron-man-text').animate({
-          fontSize: "10vw"
-        }, 400, "linear")
-
-        
+        $('#iron-man-text').animate({ 
+          marginBottom: "500px",  
+          fontSize: "10vw" 
+        }, 400, "swing", () => {
+          $('#container-about').css({ display: "grid" })
+          $('#container-about').animate({ opacity: 1 })
+        })
       } else {
-        $('#mouse-info').css({display: 'none', opacity: '0'})
+        $('#mouse-info').css({ display: 'none', opacity: '0' })
 
-        // Animate About element for mobile
-        $('#container-about').css({display: "grid"})
-        $('#container-about').animate({opacity: 1})
+        $('#container-about').css({ display: "grid" })
+        $('#container-about').animate({ opacity: 1 })
         return
       }
-
-      // Animate About element for desktop
-      $('#container-about').css({display: "grid"})
-      $('#container-about').delay(400).animate({opacity: 1})
     })
   })
 }

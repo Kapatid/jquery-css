@@ -13,6 +13,7 @@
 }
 #container-about p {
   font-family: JuPlusMedium;
+  font-size: 1.2rem;
   width: 100%;
   text-align: center;
 }
@@ -68,7 +69,7 @@
 }
 .folder-content {
   font-family: JuPlusMedium;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   box-sizing: border-box;  
   width: 100%;
   border: 4px solid white;
@@ -111,10 +112,18 @@
   top: 0;
 }
 
+
+/* WIDE SCREEN */
+@media only screen   
+and (min-width: 1860px) {
+  #container-about {
+    margin-top: 200px;
+  }
+}
 /* MOBILE */
 @media (max-width: 35em) {
   #container-about {
-    margin-top: 0px;
+    margin-top: 20px;
     width: 90%;
     font-size: 0.9rem;
   }
